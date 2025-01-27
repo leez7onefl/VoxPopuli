@@ -306,7 +306,7 @@ else:
 
         # Onglet 4 : Chat
         with tab4:
-            st.markdown("<div class='header'>💬 Chat</div>", unsafe_allow_html=True)
+            st.markdown("<div class='header'>📌 Propositions</div>", unsafe_allow_html=True)
             chat_themes = ["Tous les thèmes", "Pollution environnementale", "Social", "Économie", "Transport", "Culture"]
             selected_chat_theme = st.selectbox("Choisissez un thème pour discuter :", chat_themes)
 
