@@ -199,9 +199,9 @@ if st.session_state["current_page"] == "dashboard":
 else:
     # Layout management
     if st.session_state["is_admin"]:
-        tab1, tab2, tab3, tab4, tab5 = st.tabs(["📢 Annonces", "📊 Sondages", "📊 Analyses", "📌 Propositions", "💬 Chat"])
+        tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📢 Annonces", "📊 Sondages", "📊 Analyses", "📌 Propositions", "💬 Chat"])
     else:
-        tab1, tab2, tab4, tab5 = st.tabs(["📢 Annonces", "📊 Sondages", "📌 Propositions", "💬 Chat"])
+        tab1, tab2, tab4, tab5, tab6 = st.tabs(["📢 Annonces", "📊 Sondages", "📌 Propositions", "💬 Chat"])
 
     # Tab 1: Annonces
     with tab1:
@@ -582,3 +582,48 @@ else:
     
                 # Append assistant's response to chat history
                 st.session_state.messages.append({"role": "assistant", "content": refined_response})
+        
+        with tab6:
+            st.markdown("<div class='header'>❓Informations </div>", unsafe_allow_html=True)
+            if st.session_state["is_admin"]:
+                st.markdown("""
+                ## Bienvenue sur VoxPopuli 
+                # 🌱
+                #### Le site qui vous permet gérer les idées de votre commune. 
+                ---
+                
+                ## Comment ça marche?
+                
+                ### 1. **Proposer une idée**
+                1. **Se connecter en tant qu'administrateur**  
+                    - Un code secret vous donne accès à des fonctionnalités avancées.
+
+                2. **Analyser les retours**  
+                    - L'onglet **"📊 Dashboard"** vous permet de consulter facilement les statistiques, de repérer les sujets importants et de visualiser les retours citoyens (positifs ou négatifs).
+
+                3. **Épingler et mettre en avant des idées**  
+                    - Dans l'onglet **"➕ Consulter"**, vous pouvez parcourir l'ensemble des propositions citoyennes, sélectionner celles qui vous semblent pertinentes et les mettre en avant.  
+                    - Ainsi, elles apparaîtront dans **"📌 Propositions"** et seront visibles par tous.
+
+                """)
+            else:
+                st.markdown("""
+                ## Bienvenue sur VoxPopuli 
+                # 🌱
+                #### Le site qui vous permet de partager vos idées et de participer activement à la vie de votre communauté. 
+                ---
+                
+                ## Comment ça marche?
+                
+                1. **Découvrir les idées mises en avant**  
+                    - Rendez-vous sur l'onglet **"📌 Propositions"** pour voir les propositions existantes.  
+                    - Vous pouvez **liker** (👍), **disliker** (👎) ou **commenter** chaque proposition.
+
+                2. **Proposer vos propres idées**  
+                    - Dans l'onglet **"☝️ Ma proposition"**, vous disposez d'une zone de texte pour partager votre suggestion.  
+                    - Une fois envoyée, votre idée sera consultée par l'équipe municipale.
+
+                3. **Échanger**  
+                    - Dans l'onglet **"💬 Chat"** (si disponible), vous pouvez échanger en direct avec un chatbot qui est spécialisé.  
+                    - L'onglet **"❓Informations"** vous offre plus de détails sur le fonctionnement du site.
+                """)
