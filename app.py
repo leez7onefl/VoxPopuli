@@ -199,9 +199,9 @@ if st.session_state["current_page"] == "dashboard":
 else:
     # Layout management
     if st.session_state["is_admin"]:
-        tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📢 Annonces", "📊 Sondages", "📊 Analyses", "📌 Propositions", "💬 Chat"])
+        tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["📢 Annonces", "📊 Sondages", "📊 Analyses", "📌 Propositions", "💬 Chat", "❓information"])
     else:
-        tab1, tab2, tab4, tab5, tab6 = st.tabs(["📢 Annonces", "📊 Sondages", "📌 Propositions", "💬 Chat"])
+        tab1, tab2, tab4, tab5, tab6 = st.tabs(["📢 Annonces", "📊 Sondages", "📌 Propositions", "💬 Chat", "❓information"])
 
     # Tab 1: Annonces
     with tab1:
